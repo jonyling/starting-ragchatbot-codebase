@@ -16,8 +16,8 @@ class RAGSystem:
         # Initialize core components
         self.document_processor = DocumentProcessor(config.CHUNK_SIZE, config.CHUNK_OVERLAP)
         self.vector_store = VectorStore(config.CHROMA_PATH, config.EMBEDDING_MODEL, config.MAX_RESULTS)
-        self.ai_generator = AIGenerator(config.ANTHROPIC_API_KEY, config.ANTHROPIC_MODEL)
         self.session_manager = SessionManager(config.MAX_HISTORY)
+        self.ai_generator = AIGenerator(config.XAI_API_KEY, config.XAI_MODEL)
         
         # Initialize search tools
         self.tool_manager = ToolManager()
